@@ -1,5 +1,8 @@
 import React from 'react';
 import './styles/ProfileSettings.css'; 
+import logo from '../Assets/logo.png';
+import placeholder from '../Assets/placeholder.jpg';  
+
 
 const ProfileSettings = () => {
   return (
@@ -9,17 +12,17 @@ const ProfileSettings = () => {
         <div className="menu-icon">
           <i className="fa fa-bars"></i>
         </div>
-        <img src="/path/to/logo.png" alt="SRV Logo" className="logo" />
+        <img src={logo} alt="Seniors Rights Victoria Logo" className="logo" />
+
         <div className="header-right">
           <i className="notification-icon fa fa-bell"></i>
           <div className="user-info">
-            <img src="/path/to/user-avatar.jpg" alt="User Avatar" className="user-avatar" />
-            <span className="user-name">John Doe</span>
+          <img src={placeholder} alt="User Avatar" className="header-avatar" />
+          <span className="user-name">John Doe</span>
           </div>
         </div>
       </header>
 
-      {/* Tabs for Settings */}
       <div className="tabs">
         <button className="tab-button active">Settings</button>
         <button className="tab-button">Notification</button>
@@ -46,11 +49,13 @@ const ProfileInfo = () => {
     <div className="profile-info">
       <div className="profile-avatar">
         <div className="avatar-circle">
-          
+        <img src={placeholder} alt="Profile Avatar" className="profile-avatar" />
+
         </div>
       </div>
       <h2>John Doe</h2>
       <p>Melbourne, Australia</p>
+      <p className="job-title">Supervisor</p>
       <div className="stats">
         <div>
           <strong>21</strong> Feedbacks
