@@ -50,7 +50,6 @@ const ProfileInfo = () => {
       <div className="profile-avatar">
         <div className="avatar-circle">
         <img src={placeholder} alt="Profile Avatar" className="profile-avatar" />
-
         </div>
       </div>
       <h2>John Doe</h2>
