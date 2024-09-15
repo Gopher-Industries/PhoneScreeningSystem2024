@@ -9,6 +9,7 @@ import Navbar from "./Components/LandingPage/Navbar";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import TicketDetail from "./Components/TicketDetail/TicketDetail";
 import Calendar from "./Components/Calendar/Calendar";
+import AIInsights from "./Components/AI-insights/AIInsights";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -24,6 +25,8 @@ function App() {
           <Route path="/dashboard" Component={Dashboard} />
           <Route path="/TicketDetail" Component={TicketDetail} />
           <Route path="/Calendar" Component={Calendar} />
+          <Route path="/AIInsights" Component={AIInsights} />
+
         </Routes>
       </BrowserRouter>
     </div>

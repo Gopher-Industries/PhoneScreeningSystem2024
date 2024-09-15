@@ -3,6 +3,7 @@ import './Dashboard.css'; // Import your CSS file here
 import { openSidebar, closeSidebar } from './Script.js';
 import logo from '../Assets/logo.png';
 import AreaChart from './AreaChartComp.js'
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Dashboard = () => {
   return (
@@ -53,8 +54,10 @@ const Dashboard = () => {
             <span class="material-symbols-outlined">calendar_month</span> Calendar
             </li>
             <li className="sidebar-list-item">
-              <span className="material-icons-outlined">description</span> AI-Insights
-            </li>
+      <Link to="/AIInsights" className="sidebar-link">
+        <span className="material-icons-outlined">description</span> AI-Insights
+    </Link>
+          </li>
             <li className="sidebar-list-item">
               <span className="material-icons-outlined">settings</span> Settings
             </li>

@@ -58,24 +58,24 @@
 .charts {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between; /* Evenly distribute charts */
+    align-items: flex-start; /* Align charts at the top */
     gap: 20px;
-    justify-content: center;
 }
 
-/* Adjusted chart-container to fit within its container and avoid overlap */
+/* Adjusted chart-container to fit within its container and align in a grid */
 .chart-container {
-    width: 100%;
-    max-width: 400px; /* Increased max-width for larger charts */
-    height: 300px; /* Fixed height to prevent overlap */
-    padding: 30px; /* Added padding to ensure content does not touch edges */
-    box-sizing: border-box; /* Include padding in height calculations */
+    flex: 1 1 calc(33% - 20px); /* Three charts per row, accounting for gap */
+    max-width: 400px; /* Control the max-width for larger screens */
+    height: 300px; /* Fixed height to ensure charts stay within bounds */
+    padding: 30px;
+    box-sizing: border-box;
     text-align: center;
     margin: 0 auto;
     position: relative;
-    border: 1px solid #ddd; /* Optional: Add border for better visual separation */
-    border-radius: 8px; /* Optional: Rounded corners */
-    overflow: hidden; /* Ensure content stays within the container */
-    background-color: #ffffff; /* Set background color to white */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
 }
 
 /* Ensures charts themselves are responsive and fit properly */
@@ -86,18 +86,30 @@
 
 /* Chart title styling */
 .chart-container h2 {
-    margin: 0 0 10px 0; /* Margin only at the bottom to prevent overlap */
-    font-size: 0.8rem; /* Further decreased font size for a smaller heading */
+    margin: 0 0 10px 0;
+    font-size: 0.8rem;
     color: #343a40;
     font-weight: 600;
 }
 
 /* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+    .chart-container {
+        flex: 1 1 calc(50% - 20px); /* Two charts per row on smaller screens */
+        height: auto;
+        padding: 20px;
+    }
+
+    .charts {
+        gap: 15px; /* Reduced gap on smaller screens */
+    }
+}
+
 @media (max-width: 768px) {
     .chart-container {
-        max-width: 100%; /* Ensure the chart fits the container */
-        height: auto; /* Allow height to adjust based on content */
-        padding: 10px; /* Reduced padding on smaller screens */
+        flex: 1 1 100%; /* Single chart per row on mobile */
+        height: auto;
+        padding: 10px;
     }
 
     .charts {
